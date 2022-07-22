@@ -69,3 +69,24 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---------------------------------------------------------------------------------------------------------------------
+Login function in Controller optimized code:
+   $user = mymodel::where('email', '=', $req->email)->first();
+        if ($user) {
+            if (Hash::check($req->password, $user->password)) {
+             
+//
+//                $value = $req->session()->get('loginId');
+//                echo $value;
+//               // $data = $req->session()->all();
+                //echo $data;
+          //      echo $user->id;
+
+                echo "loged in";
+            } else {
+                echo "Incorrect password";
+            }
+        } else {
+            return "This email is not registered";
+//        }
+----------------------------------------------------------------------------------------
