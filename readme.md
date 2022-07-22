@@ -75,12 +75,11 @@ Login function in Controller optimized code:
         if ($user) {
             if (Hash::check($req->password, $user->password)) {
              
-//
-//                $value = $req->session()->get('loginId');
-//                echo $value;
-//               // $data = $req->session()->all();
-                //echo $data;
-          //      echo $user->id;
+                $value = $req->session()->get('loginId');
+                echo $value;
+                $data = $req->session()->all();
+                echo $data;
+                echo $user->id;
 
                 echo "loged in";
             } else {
@@ -88,5 +87,5 @@ Login function in Controller optimized code:
             }
         } else {
             return "This email is not registered";
-//        }
+        }
 ----------------------------------------------------------------------------------------
